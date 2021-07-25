@@ -9,7 +9,7 @@ import _ from 'lodash';
 import moment from 'moment';
 
 const TodoPage = props => {
-  // const inputRef = useRef(null)
+  const inputRef = useRef(null);
   const [todoList, setTodoList] = useState([]);
   const [todoText, setTodoText] = useState();
   const [editItem, setEditItem] = useState();
@@ -41,7 +41,14 @@ const TodoPage = props => {
 
       <div>
         <div>
-          {/* <input ref={inputRef} type="text" onChange={e=>{setTodoText(e.target.value)}} value={todoText} /> */}
+          <input
+            ref={inputRef}
+            type="text"
+            onChange={e => {
+              setTodoText(e.target.value);
+            }}
+            value={todoText}
+          />
         </div>
         <div>
           <button onClick={handleAdd}>Add</button>
